@@ -9,6 +9,10 @@ templates:
   config/web_tls_cert.pem: config/web_tls_cert.pem
   config/web_tls_key.pem: config/web_tls_key.pem
 
+provides:
+  - name: firehose_exporter
+    type: firehose_exporter
+
 properties:
   firehose_exporter.uaa.url:
     description: "Cloud Foundry UAA URL"
@@ -20,6 +24,10 @@ properties:
     description: "Cloud Foundry Doppler URL"
   firehose_exporter.doppler.subscription_id:
     description: "Cloud Foundry Doppler Subscription ID"
+    default: prometheus
+  firehose_exporter.doppler.use_unique_subscription_id:
+    description: "If true the instance id will be added as a suffix to the subscription id"
+    default: false
   firehose_exporter.doppler.idle_timeout:
     description: "Cloud Foundry Doppler Idle Timeout"
   firehose_exporter.doppler.min_retry_delay:
