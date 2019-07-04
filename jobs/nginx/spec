@@ -86,11 +86,11 @@ properties:
   nginx.resolver.address:
     description: "DNS Resolver for Nginx"
   nginx.resolver.enable_ipv6:
-    description: "Enable IPv6 lookups (only applies when using nginx.resolver.address)
+    description: "Enable IPv6 lookups (only applies when using nginx.resolver.address)"
     default: false
-
   nginx.server_names_hash_bucket_size:
     description: "enables setting the size of the server name hash bucket"
+    default:
   nginx.alertmanager.server_name:
     description: "Server name that proxy will listen on for Alertmanager HTTP(S) connections"
     default: _
