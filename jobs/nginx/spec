@@ -84,6 +84,8 @@ properties:
     description: "Timeout for send queries to the upstream server"
     default: 120
 
+  nginx.server_names_hash_bucket_size:
+    description: "enables setting the size of the server name hash bucket"
   nginx.alertmanager.server_name:
     description: "Server name that proxy will listen on for Alertmanager HTTP(S) connections"
     default: _
