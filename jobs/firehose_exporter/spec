@@ -23,6 +23,8 @@ properties:
   firehose_exporter.doppler.subscription_id:
     description: "Cloud Foundry Doppler Subscription ID"
     default: prometheus
+  firehose_exporter.doppler.url:
+      description: "Cloud Foundry Logging endpoint"
   firehose_exporter.doppler.use_unique_subscription_id:
     description: "If true the instance id will be added as a suffix to the subscription id"
     default: false
