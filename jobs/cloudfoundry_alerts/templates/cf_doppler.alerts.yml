@@ -6,7 +6,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.firehose_dropped_messages.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.firehose_dropped_messages.severity') %>
         annotations:
           summary: "Firehose at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` is dropping messages at a high rate: ${{value}} msgs/sec"
           description: "The Firehose at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` has been dropping {{$value}} messages per second during the last <%= p('cloudfoundry_alerts.firehose_dropped_messages.evaluation_time') %>"

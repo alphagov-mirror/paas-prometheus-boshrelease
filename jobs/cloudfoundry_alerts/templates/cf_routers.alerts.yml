@@ -6,7 +6,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.router_emitter_sync_duration.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.router_emitter_sync_duration.severity') %>
         annotations:
           summary: "Diego Router Emitter synch duration at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` is too high: {{$value}} sec"
           description: "Diego Router Emitter at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` had a synch duration of {{$value}} seconds during the last <%= p('cloudfoundry_alerts.router_emitter_sync_duration.evaluation_time') %>"
@@ -16,7 +16,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.router_requests.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.router_requests.severity') %>
         annotations:
           summary: "Requests per second at CF Router `{{$labels.environment}}/{{$labels.bosh_deployment}}/{{$labels.bosh_job_ip}}` is too high: {{$value}}req/s"
           description: "CF Router `{{$labels.environment}}/{{$labels.bosh_deployment}}/{{$labels.bosh_job_ip}}` has processed {{$value}} requests per second during the last <%= p('cloudfoundry_alerts.router_requests.evaluation_time') %>"
@@ -28,7 +28,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.router_requests_drop.evaluation_time') %>
         labels:
           service: cf
-          severity: critical
+          severity: <%= p('cloudfoundry_alerts.router_requests_drop.severity') %>
         annotations:
           summary: "Total requests per second have dropped too fast"
           description: "Total requests per second across all routers has dropped below <%= p('cloudfoundry_alerts.router_requests_drop.threshold') %>% during the last <%= p('cloudfoundry_alerts.router_requests_drop.evaluation_time') %>"
@@ -38,7 +38,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.routers_latency.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.routers_latency.severity') %>
         annotations:
           summary: "Router's latency at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` is too high: {{$value}}ms"
           description: "The router's latency at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` has been {{$value}}ms during the last <%= p('cloudfoundry_alerts.routers_latency.evaluation_time') %>"
@@ -48,7 +48,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.routes_last_registry.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.routes_last_registry.severity') %>
         annotations:
           summary: "Routes at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` not being registered"
           description: "Routes at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` are not being registered to apps correctly. It has been at least {{$value}} seconds since a router received a 'router.register' message from an app"
@@ -58,7 +58,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.router_bad_gateway.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.router_bad_gateway.severity') %>
         annotations:
           summary: "Bad gateway responses per second at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` is too high: {{$value}} 5xx res/s"
           description: "Routers at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` have been returning {{$value}} bad gateway responses per second during the last <%= p('cloudfoundry_alerts.router_bad_gateway.evaluation_time') %>"
@@ -68,7 +68,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.router_5xx_responses.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.router_5xx_responses.severity') %>
         annotations:
           summary: "5xx responses per second at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` is too high: {{$value}} 5xx res/s"
           description: "Routers at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` have been returning {{$value}} 5xx responses per second during the last <%= p('cloudfoundry_alerts.router_5xx_responses.evaluation_time') %>"
@@ -78,7 +78,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.routes_total.evaluation_time') %>
         labels:
           service: cf
-          severity: warning
+          severity: <%= p('cloudfoundry_alerts.routes_total.severity') %>
         annotations:
           summary: "Number of routes at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` is too low: {{$value}}"
           description: "There has been only {{$value}} routes in the routing table at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` during the last <%= p('cloudfoundry_alerts.routes_total.evaluation_time') %>"

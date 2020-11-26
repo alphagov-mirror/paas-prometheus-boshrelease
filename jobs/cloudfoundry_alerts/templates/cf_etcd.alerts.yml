@@ -6,7 +6,7 @@ groups:
         for: <%= p('cloudfoundry_alerts.etcd_leaders.evaluation_time') %>
         labels:
           service: cf
-          severity: critical
+          severity: <%= p('cloudfoundry_alerts.etcd_leaders.severity') %>
         annotations:
           summary: "`etcd` cluster at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` has ${{value}} leaders"
           description: "The `etcd` cluster at CF `{{$labels.environment}}/{{$labels.bosh_deployment}}` had {{$value}} leaders during the last <%= p('cloudfoundry_alerts.etcd_leaders.evaluation_time') %>"
